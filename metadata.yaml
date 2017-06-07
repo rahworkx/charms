@@ -1,19 +1,13 @@
 name: geminabox
-summary: <Fill in summary here>
-maintainer: ubuntu <ubuntu@DevOps-Server>
-description: |
-  <Multi-line description here>
+summary: GeminiaBox
+maintainer:  Ronald Haynes <rhaynes008@gmail.com>
+description: Geminabox lets you host your own gems, and push new gems to it just like with rubygems.org. The bundler dependencies API is supported out of the box. Authentication is left up to either the web server, or the Rack stack.
+  
 tags:
-  # Replace "misc" with one or more whitelisted tags from this list:
-  # https://jujucharms.com/docs/stable/authors-charm-metadata
-  - misc
+  - geminabox
+  - rubygems
 subordinate: false
-provides:
-  provides-relation:
-    interface: interface-name
-requires:
-  requires-relation:
-    interface: interface-name
-peers:
-  peer-relation:
-    interface: interface-name
+series:
+  - xenial
+resources:
+  :
