@@ -1,6 +1,9 @@
 options:
   repo:
     type: string
-    default: "github.com/rahworkx/geminabox-dockerized"
+    default: "https://github.com/rahworkx/geminabox-dockerized"
     description: "Loation of Geminabox Repo"
-
+  port:
+    type: int
+    default: 9292
+    description: "Port to Expose geminabox server"

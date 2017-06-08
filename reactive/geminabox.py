@@ -16,6 +16,14 @@ def install_geminabox():
 
 
 @when('geminabox.docker.available')
+@when_not('geminabox.port.opened')
+def open_geminabox_port():
+    open_port(config('port'))
+    set_state('geminabox.port.opened')
+
+
+@when('geminabox.docker.available')
+@when('geminabox.port.opened')
 def persist_status():
     status_set('active', 'Geminabox Webserver Running')
 
