@@ -17,5 +17,5 @@ def install_geminabox():
 
 @when('geminabox.docker.available')
 def persist_status():
-    status_set('active', 'Masterless Geminabox Configued')
+    status_set('active', 'Geminabox Webserver Running')
 
