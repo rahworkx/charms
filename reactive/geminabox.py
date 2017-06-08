@@ -7,7 +7,7 @@ from subprocess import call
 @when('codebase.available')
 @when_not('geminabox.docker.available')
 def install_geminabox():
-    #
+    
     with chdir('/srv/geminabox/current'):
          call("docker build -t geminabox .".split())
          call("docker run -d -p 9292:9292 geminabox:latest".split())
