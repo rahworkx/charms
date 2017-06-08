@@ -1,5 +1,19 @@
-# layer-geminabox
-This is a fork of Sonots Geminabox Repo. 
-https://github.com/geminabox/geminabox
+### GemInABox Layer 
 
-THis Juju Charm wil install and configure the folowing.
+This layer will create a charm that will utilized the Docker repo below to deploy Geminabox.
+
+```
+https://github.com/rahworkx/geminabox-dockerized
+```
+
+### Additonal Details
+
+Follow link below for more information about GeminaBox. 
+```
+https://github.com/geminabox/geminabox
+```
+
+Follow the link below for Charm Usage
+```
+ComingSoon
+```

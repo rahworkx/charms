@@ -1,4 +1,9 @@
-includes: ['layer:basic']  # if you use any interfaces, add them here
-  basic:
-    packages:
-      - ruby-dev
+includes: 
+  - layer:basic 
+  - layer:git-deploy
+  - layer:docker
+options: 
+  git-deploy: 
+    target: "/srv/geminabox"
+repo: "https://github.com/rahworkx/layer-geminabox"
+

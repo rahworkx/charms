@@ -5,9 +5,7 @@ description: Geminabox lets you host your own gems, and push new gems to it just
   
 tags:
   - geminabox
-  - rubygems
+  - gem_server
 subordinate: false
 series:
   - xenial
-resources:
-  :
