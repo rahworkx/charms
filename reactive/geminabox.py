@@ -1,5 +1,5 @@
 from charms.reactive import when, when_not, set_state
-from charmhelpers.core.hookenv import status_set
+from charmhelpers.core.hookenv import status_set, open_port, config
 from charmhelpers.core.host import chdir
 from subprocess import call
 
@@ -7,6 +7,7 @@ from subprocess import call
 @when('codebase.available')
 @when_not('geminabox.docker.available')
 def install_geminabox():
+
     
     with chdir('/srv/geminabox/current'):
          call("docker build -t geminabox .".split())
