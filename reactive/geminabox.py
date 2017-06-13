@@ -8,15 +8,26 @@ from subprocess import call
 @when_not('geminabox.docker.available')
 def install_geminabox():
 
-    
+
     with chdir('/srv/geminabox/current'):
          call("docker build -t geminabox .".split())
-         call("docker run -d -p 9292:9292 geminabox:latest".split())
-         
+
     set_state('geminabox.docker.available')
 
 
 @when('geminabox.docker.available')
+@when_not('geminabox.docker.running')
+def run_geminabox():
+
+
+    with chdir('/srv/geminabox/current'):
+          call("docker run -d -p 9292:9292 geminabox:latest".split())
+
+    set_state('geminabox.docker.running')
+
+
+@when('geminabox.docker.available')
+@when('geminabox.docker.running')
 @when_not('geminabox.port.opened')
 def open_geminabox_port():
     open_port(config('port'))
@@ -24,7 +35,7 @@ def open_geminabox_port():
 
 
 @when('geminabox.docker.available')
+@when('geminabox.docker.running')
 @when('geminabox.port.opened')
 def persist_status():
     status_set('active', 'Geminabox Webserver Running')
-
